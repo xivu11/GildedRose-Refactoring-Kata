@@ -10,6 +10,9 @@ class GildedRose
         if item.quality > 0
           if item.name != "Sulfuras, Hand of Ragnaros"
             item.quality = item.quality - 1
+            if item.name == "Conjured Mana Cake" && item.quality > 0
+              item.quality = item.quality - 1
+            end
           end
         end
       else
@@ -38,12 +41,16 @@ class GildedRose
             if item.quality > 0
               if item.name != "Sulfuras, Hand of Ragnaros"
                 item.quality = item.quality - 1
+                if item.name == "Conjured Mana Cake" && item.quality > 0
+                  item.quality = item.quality - 1
+                end
               end
             end
           else
             item.quality = item.quality - item.quality
           end
         else
+          # Since in condition page nothing is mentioned regarding increase quantity of aged Brie, i am assuming that code indicating Aged Brie increase by 1 before sellIn is 0 and increase by 2 after sellIn is less than or equal to 0 is correct
           if item.quality < 50
             item.quality = item.quality + 1
           end
