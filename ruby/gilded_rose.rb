@@ -5,6 +5,7 @@ class GildedRose
   end
 
   def update_quality()
+    # Cases where items input does not match the requirements such as a regular item with negative quality, Sulfuras with quality other than 80, quality or sellin not an integer value, etc. were not covered because I was not sure if we can modify the quality value and if yes, what should be the value of quality.
     @items.each do |item|
       if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert"
         if item.quality > 0
